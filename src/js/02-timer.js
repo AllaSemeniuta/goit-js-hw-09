@@ -13,7 +13,7 @@ const refs = {
     seconds: document.querySelector('span[data-seconds]'),
     input: document.querySelector('#datetime-picker'),
 } 
-
+let dateNow;
 refs.startBtn.setAttribute("disabled", 'true')
 
 const options = {
@@ -23,7 +23,7 @@ const options = {
     minuteIncrement: 1,
     
     onClose(selectedDates) {
-        let dateNow = new Date();
+        dateNow = new Date();
       
         if(selectedDates[0] < dateNow ) {
             Notify.failure('Please choose a date in the future');
