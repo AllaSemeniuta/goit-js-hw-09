@@ -23,7 +23,7 @@ const options = {
     minuteIncrement: 1,
     
     onClose(selectedDates) {
-        let dateNow = new Date;
+        let dateNow = new Date();
       
         if(selectedDates[0] < dateNow ) {
             Notify.failure('Please choose a date in the future');
