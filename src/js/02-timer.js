@@ -46,11 +46,10 @@ function onStartBtn () {
     const futureTime = futureDate.getTime()
 
     timerId = setInterval(() => {
-        dateNow = new Date;
+        dateNow = new Date();
         timeNow = dateNow.getTime()
         timeToFinish = futureTime - timeNow
         result = convertMs(timeToFinish);
-        console.log(typeof result.days)
         refs.day.textContent = `${result.days.toString().padStart(2,'0')}`;
         refs.hours.textContent = `${result.hours.toString().padStart(2,'0')}`;
         refs.minutes.textContent = `${result.minutes.toString().padStart(2,'0')}`;
