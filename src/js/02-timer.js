@@ -13,7 +13,6 @@ const refs = {
     seconds: document.querySelector('span[data-seconds]'),
     input: document.querySelector('#datetime-picker'),
 } 
-let dateNow;
 refs.startBtn.setAttribute("disabled", 'true')
 
 const options = {
@@ -35,6 +34,7 @@ const options = {
   };
 
 const fp = flatpickr("#datetime-picker", options);
+let dateNow;
 let timerId = null;
 let result;
 
@@ -47,8 +47,8 @@ function onStartBtn () {
 
     timerId = setInterval(() => {
         dateNow = new Date();
-        timeNow = dateNow.getTime()
-        timeToFinish = futureTime - timeNow
+        const timeNow = dateNow.getTime()
+        const timeToFinish = futureTime - timeNow
         result = convertMs(timeToFinish);
         refs.day.textContent = `${result.days.toString().padStart(2,'0')}`;
         refs.hours.textContent = `${result.hours.toString().padStart(2,'0')}`;
